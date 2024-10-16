@@ -81,7 +81,7 @@ def transform(out_file):
                     Modifier_keys+=Modifier_keys_dictoinary[j]
                     ans.append('['+Modifier_keys+Keys[byte[2]]+']')
             i+=1
-                    
+
     #Upper
     p = 0
     for i in range(len(ans)):
@@ -115,6 +115,7 @@ def transform(out_file):
     s=input(f"Do you want to delete format_{out_file}?(y/n) : ")
     if(s=='y'):
         os.remove(f"format_{out_file}")
+        
 banners="""
    __  __     __    __ __           __                         __   
   / / / /____/ /_  / //_/__  __  __/ /_  ____  ____ __________/ /   
@@ -128,7 +129,8 @@ banners="""
   / /| | / __ \/ __ `/ / / / / ___/ _ \\
  / ___ |/ / / / /_/ / / /_/ (__  )  __/
 /_/  |_/_/ /_/\__,_/_/\__, /____/\___/
-                     /____/                          --by kahonanami
+                     /____/                          
+                                                            --by kahonanami
 """
 
 print(banners)
@@ -136,7 +138,7 @@ print(banners)
 parser = argparse.ArgumentParser(description='None')
 parser.add_argument('-f', '--file', help='here is file', required=True)
 parser.add_argument('-Y', '--filter',help='here is filter',required=False)
-parser.add_argument('-e',"--field",help='here is output_format',required=True)
+parser.add_argument('-e',"--field",help='here is output format,HID Data is usbhid.data while Leftover Capture Data is usb.capdata. ',required=True)
 parser.add_argument('-o',"--out_file",help='here is outfile name, default is extracted.txt',required=False, default='extracted.txt')
 
 args = parser.parse_args()
